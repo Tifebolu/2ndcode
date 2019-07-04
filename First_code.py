@@ -119,16 +119,26 @@
 
 variable_x = (input("Values for x: "))
 variable_y = (input("Values for y: "))
+
 split_x = variable_x.split(" ")
+split_x_to_int = [int(x) for x in split_x]
+total_x = sum(split_x_to_int)
+
 split_y = variable_y.split(" ")
-total_x = sum(variable_x)
-print(total_x)
-total_y = sum(variable_y)
-mean_x = f"{total_x/len(variable_x)}"
-mean_y = f"sum{variable_y}/len{variable_y}"
-mean_deviation_x = map(lambda variable_x: variable_x - mean_x, variable_x)
-mean_deviation_y = map(lambda variable_y: variable_y - mean_y, variable_y)
+split_y_to_int = [int(y) for y in split_y]
+total_y = sum(split_y_to_int)
+
+mean_x = total_x/len(split_x)
+mean_y = total_y/len(split_y)
+
+mean_deviation_x = map(lambda element: element - mean_x, split_x_to_int)
+mean_deviation_y = map(lambda element: element - mean_y, split_y_to_int)
+
+
+
+
+
 print(list(mean_deviation_x))
 print(list(mean_deviation_y))
-print(sum(variable_x))
-print(sum(variable_y))
+# print(sum(variable_x))
+# print(sum(variable_y))
